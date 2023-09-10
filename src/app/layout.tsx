@@ -2,8 +2,7 @@
 
 import type { Metadata } from 'next'
 import { Roboto } from 'next/font/google'
-import { globalStyles } from '@/styles/global'
-import { getCssText } from '@ignite-ui/react'
+import { ServerStylesheet } from '@/styles/ServerStylesheet'
 
 export const metadata: Metadata = {
   title: 'Ignite Call',
@@ -16,8 +15,6 @@ const roboto = Roboto({
   weight: ['400', '500', '700'],
 })
 
-globalStyles()
-
 export default function RootLayout({
   children,
 }: {
@@ -25,14 +22,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <head>
-        {/* for loading styles with javascript disabled */}
-        <style
-          id="stitches"
-          dangerouslySetInnerHTML={{ __html: getCssText() }}
-        />
-      </head>
-      <body className={roboto.className}>{children}</body>
+      <body className={roboto.className}>
+        <ServerStylesheet>{children}</ServerStylesheet>
+      </body>
     </html>
   )
 }
