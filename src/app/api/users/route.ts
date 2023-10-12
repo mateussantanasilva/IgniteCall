@@ -1,10 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { cookies } from 'next/headers'
-import { registerFormData } from '@/app/register/page'
+import { RegisterFormData } from '@/app/register/page'
 import { prisma } from '@/lib/prisma'
 
 export async function POST(request: NextRequest) {
-  const { name, username }: registerFormData = await request.json()
+  const { name, username }: RegisterFormData = await request.json()
 
   const userExists = await prisma.user.findUnique({
     where: {
