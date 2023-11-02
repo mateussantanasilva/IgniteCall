@@ -21,7 +21,7 @@ import { api } from '@/lib/axios'
 const updateProfileSchema = z.object({
   bio: z.string(),
 })
-export type UpdateProfileData = z.infer<typeof updateProfileSchema>
+type UpdateProfileData = z.infer<typeof updateProfileSchema>
 
 export default function UpdateProfile() {
   const {
