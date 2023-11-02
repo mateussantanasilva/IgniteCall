@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import { Roboto } from 'next/font/google'
 import { ServerStylesheet } from '@/styles/ServerStylesheet'
 import { NextAuthProvider } from '@/contexts/NextAuthProvider'
+import { ReactQueryProvider } from '@/contexts/ReactQueryProvider'
+import { UsernameParamProvider } from '@/contexts/UsernameParamProvider'
 
 export const metadata: Metadata = {
   title: 'Ignite Call',
@@ -23,7 +25,11 @@ export default function RootLayout({
     <html lang="pt-BR">
       <body className={roboto.className}>
         <NextAuthProvider>
-          <ServerStylesheet>{children}</ServerStylesheet>
+          <ReactQueryProvider>
+            <UsernameParamProvider>
+              <ServerStylesheet>{children}</ServerStylesheet>
+            </UsernameParamProvider>
+          </ReactQueryProvider>
         </NextAuthProvider>
       </body>
     </html>

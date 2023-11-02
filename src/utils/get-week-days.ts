@@ -1,9 +1,21 @@
-export function getWeekDays(language = 'pt-BR') {
+interface getWeekDaysParams {
+  language?: string
+  short?: boolean
+}
+
+export function getWeekDays({
+  language = 'pt-BR',
+  short = false,
+}: getWeekDaysParams = {}) {
   const formatter = new Intl.DateTimeFormat(language, { weekday: 'long' })
 
   const weekDays = createArrayWithWeekDays(formatter)
 
   const weekDaysFormatted = weekDays.map((weekDay) => {
+    if (short) {
+      return turnIntoShortAbbreviation(weekDay)
+    }
+
     return capitalizeFirstLetter(weekDay)
   })
 
@@ -18,6 +30,10 @@ function createArrayWithWeekDays(formatter: Intl.DateTimeFormat) {
   )
 
   return arrayWithWeekDays
+}
+
+function turnIntoShortAbbreviation(weekDay: string) {
+  return weekDay.substring(0, 3).toUpperCase().concat('.')
 }
 
 function capitalizeFirstLetter(weekDay: string) {
