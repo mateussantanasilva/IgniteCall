@@ -19,12 +19,12 @@ import { Container, Header } from '../styles'
 import { FormAnnotation, ProfileBox } from './styles'
 import { api } from '@/lib/axios'
 
-export const metadata: Metadata = {
-  title: 'Atualize seu perfil',
-  robots: {
-    index: false,
-  },
-}
+// export const metadata: Metadata = {
+//   title: 'Atualize seu perfil',
+//   robots: {
+//     index: false,
+//   },
+// }
 
 const updateProfileSchema = z.object({
   bio: z.string(),

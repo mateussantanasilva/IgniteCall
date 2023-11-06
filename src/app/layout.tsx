@@ -7,7 +7,7 @@ import { UsernameParamProvider } from '@/contexts/UsernameParamProvider'
 
 export const metadata: Metadata = {
   title: {
-    default: 'Descomplique sua agenda | Ignite Call',
+    default: 'Ignite Call',
     template: '%s | Ignite Call', // applies less to the home
   },
   description:

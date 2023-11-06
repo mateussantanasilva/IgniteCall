@@ -26,7 +26,7 @@ export function ScheduleContent({ user }: ScheduleContentProps) {
 
   useEffect(() => {
     onSetUsernameParam(user.username)
-  }, [])
+  })
 
   return (
     <Container>

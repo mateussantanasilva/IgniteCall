@@ -20,7 +20,6 @@ import { useContextSelector } from 'use-context-selector'
 import { UsernameParamContext } from '@/contexts/UsernameParamProvider'
 
 interface CalendarProps {
-  selectedDate: Date | null
   onDateSelected: (date: Date) => void
 }
 
@@ -29,7 +28,7 @@ interface BlockedDates {
   blockedDates: number[]
 }
 
-export function Calendar({ onDateSelected, selectedDate }: CalendarProps) {
+export function Calendar({ onDateSelected }: CalendarProps) {
   const [currentDate, setCurrentDate] = useState(() => {
     return dayjs().set('date', 1)
   })

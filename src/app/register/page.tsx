@@ -12,9 +12,9 @@ import { Button, Heading, MultiStep, Text, TextInput } from '@ignite-ui/react'
 import { Container, Form, FormError, Header } from './styles'
 import { ArrowRight } from 'phosphor-react'
 
-export const metadata: Metadata = {
-  title: 'Crie uma conta',
-}
+// export const metadata: Metadata = {
+//   title: 'Crie uma conta',
+// }
 
 const registerFormSchema = z.object({
   username: z

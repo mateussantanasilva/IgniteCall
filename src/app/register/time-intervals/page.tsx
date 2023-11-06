@@ -27,12 +27,12 @@ import {
 } from './styles'
 import { ArrowRight } from 'phosphor-react'
 
-export const metadata: Metadata = {
-  title: 'Selecione sua disponibilidade',
-  robots: {
-    index: false,
-  },
-}
+// export const metadata: Metadata = {
+//   title: 'Selecione sua disponibilidade',
+//   robots: {
+//     index: false,
+//   },
+// }
 
 const TimeIntervalsFormSchema = z.object({
   intervals: z

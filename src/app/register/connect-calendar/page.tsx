@@ -8,12 +8,12 @@ import { ArrowRight, Check } from 'phosphor-react'
 import { Container, Header } from '../styles'
 import { AuthError, ConnectBox, ConnectItem } from './styles'
 
-export const metadata: Metadata = {
-  title: 'Conecte sua agenda do Google',
-  robots: {
-    index: false,
-  },
-}
+// export const metadata: Metadata = {
+//   title: 'Conecte sua agenda do Google',
+//   robots: {
+//     index: false,
+//   },
+// }
 
 export default function ConnectCalendar() {
   const router = useRouter()
