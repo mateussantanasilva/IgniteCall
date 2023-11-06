@@ -24,6 +24,5 @@ export async function PATCH(request: NextRequest) {
     },
   })
 
-  // , { status: 204 }
-  return NextResponse.json('User updated with bio field')
+  return NextResponse.json('User updated with bio field', { status: 200 })
 }
