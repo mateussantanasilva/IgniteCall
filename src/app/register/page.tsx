@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect } from 'react'
+import { Metadata } from 'next'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -10,6 +11,10 @@ import { AxiosError } from 'axios'
 import { Button, Heading, MultiStep, Text, TextInput } from '@ignite-ui/react'
 import { Container, Form, FormError, Header } from './styles'
 import { ArrowRight } from 'phosphor-react'
+
+export const metadata: Metadata = {
+  title: 'Crie uma conta',
+}
 
 const registerFormSchema = z.object({
   username: z

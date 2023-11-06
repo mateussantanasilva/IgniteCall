@@ -1,11 +1,19 @@
 'use client'
 
+import { Metadata } from 'next'
 import { signIn, useSession } from 'next-auth/react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { Button, Heading, MultiStep, Text } from '@ignite-ui/react'
 import { ArrowRight, Check } from 'phosphor-react'
 import { Container, Header } from '../styles'
 import { AuthError, ConnectBox, ConnectItem } from './styles'
+
+export const metadata: Metadata = {
+  title: 'Conecte sua agenda do Google',
+  robots: {
+    index: false,
+  },
+}
 
 export default function ConnectCalendar() {
   const router = useRouter()

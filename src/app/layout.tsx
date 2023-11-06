@@ -6,9 +6,19 @@ import { ReactQueryProvider } from '@/contexts/ReactQueryProvider'
 import { UsernameParamProvider } from '@/contexts/UsernameParamProvider'
 
 export const metadata: Metadata = {
-  title: 'Ignite Call',
+  title: {
+    default: 'Descomplique sua agenda | Ignite Call',
+    template: '%s | Ignite Call', // applies less to the home
+  },
   description:
     'Conecte seu calendário e permita que as pessoas marquem agendamentos no seu tempo livre.',
+  keywords: ['Google', 'Agendamento', 'Calendário', 'Ignite'],
+  authors: [
+    {
+      name: 'Mateus Santana',
+      url: 'https://github.com/mateussantanasilva',
+    },
+  ],
 }
 
 const roboto = Roboto({

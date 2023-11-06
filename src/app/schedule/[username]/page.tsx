@@ -1,6 +1,11 @@
+import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { prisma } from '@/lib/prisma'
 import { ScheduleContent } from './components/ScheduleContent'
+
+export const metadata: Metadata = {
+  title: 'Agendar compromisso',
+}
 
 interface ScheduleProps {
   params: {

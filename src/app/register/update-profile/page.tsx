@@ -1,5 +1,6 @@
 'use client'
 
+import { Metadata } from 'next'
 import { useRouter } from 'next/navigation'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -17,6 +18,13 @@ import { ArrowRight } from 'phosphor-react'
 import { Container, Header } from '../styles'
 import { FormAnnotation, ProfileBox } from './styles'
 import { api } from '@/lib/axios'
+
+export const metadata: Metadata = {
+  title: 'Atualize seu perfil',
+  robots: {
+    index: false,
+  },
+}
 
 const updateProfileSchema = z.object({
   bio: z.string(),
