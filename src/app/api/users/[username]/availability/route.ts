@@ -14,8 +14,10 @@ export async function GET(
 ) {
   const username = params.username
   const date = request.nextUrl.searchParams.get('date')
+  const userTimeZone = request.nextUrl.searchParams.get('userTimeZone')
 
-  if (!date) return NextResponse.json('Date not provided', { status: 400 })
+  if (!date || !userTimeZone)
+    return NextResponse.json('Date or time zone not provided', { status: 400 })
 
   const user = await prisma.user.findUnique({
     where: {
@@ -70,7 +72,9 @@ export async function GET(
       (blockedTime) => blockedTime.date.getHours() === time,
     )
 
-    const isTimeInPast = referenceDate.set('hour', time).isBefore(new Date())
+    const isTimeInPast = referenceDate
+      .set('hour', time - Number(userTimeZone))
+      .isBefore(new Date())
 
     return !isTimeBlocked && !isTimeInPast
   })

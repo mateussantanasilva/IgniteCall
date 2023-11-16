@@ -31,16 +31,18 @@ export function CalendarStep({ onSelectDateTime }: CalendarStepProps) {
     return context.usernameParam
   })
 
-  const isDateSelected = !!selectedDate
-
   const weekDay = selectedDate ? dayjs(selectedDate).format('dddd') : null
   const describedDate = selectedDate
     ? dayjs(selectedDate).format('DD[ de ]MMMM')
     : null
 
+  const isDateSelected = !!selectedDate
+
   const selectedDateWithoutTime = isDateSelected
     ? dayjs(selectedDate).format('YYYY-MM-DD')
     : null
+
+  const userTimeZone = new Date().getTimezoneOffset() / 60
 
   const { data: availability } = useQuery<Availability>({
     // adding all the information used in the request to create the cache key
@@ -50,6 +52,7 @@ export function CalendarStep({ onSelectDateTime }: CalendarStepProps) {
       const { data } = await api.get(`/users/${username}/availability`, {
         params: {
           date: selectedDateWithoutTime,
+          userTimeZone,
         },
       })
 
