@@ -1,10 +1,14 @@
-import { Box, Text, styled } from '@ignite-ui/react'
+import { Box, Button, Text, styled } from '@ignite-ui/react'
 
 export const ConnectBox = styled(Box, {
   marginTop: '$6',
 
   display: 'flex',
   flexDirection: 'column',
+
+  [`> ${Button}`]: {
+    height: '2.875rem',
+  },
 })
 
 export const ConnectItem = styled('div', {
@@ -17,6 +21,10 @@ export const ConnectItem = styled('div', {
   borderRadius: '$md',
 
   marginBottom: '$4',
+
+  [`> ${Button}`]: {
+    border: '2px solid $ignite500',
+  },
 
   '@media (max-width: 425px)': {
     flexDirection: 'column',
