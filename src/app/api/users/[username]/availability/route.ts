@@ -69,7 +69,8 @@ export async function GET(
 
   const availableTimes = possibleTimesAvaiable.filter((time) => {
     const isTimeBlocked = blockedTimes.some(
-      (blockedTime) => blockedTime.date.getHours() === time,
+      (blockedTime) =>
+        blockedTime.date.getHours() === time + Number(userTimeZone),
     )
 
     const isTimeInPast = referenceDate
