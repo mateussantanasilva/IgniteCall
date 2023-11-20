@@ -73,11 +73,13 @@ export async function GET(
     )
 
     const isTimeInPast = referenceDate
-      .set('hour', time - Number(userTimeZone))
+      .set('hour', time + Number(userTimeZone))
       .isBefore(new Date())
 
     return !isTimeBlocked && !isTimeInPast
   })
+
+  console.log({ possibleTimesAvaiable, availableTimes })
 
   return NextResponse.json({ possibleTimesAvaiable, availableTimes })
 }
