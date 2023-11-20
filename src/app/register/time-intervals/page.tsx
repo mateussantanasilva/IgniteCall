@@ -1,6 +1,5 @@
 'use client'
 
-import { Metadata } from 'next'
 import { useRouter } from 'next/navigation'
 import { Controller, useFieldArray, useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'

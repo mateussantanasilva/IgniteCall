@@ -1,4 +1,4 @@
-import { Box, Text, styled } from '@ignite-ui/react'
+import { Box, Button, Text, styled } from '@ignite-ui/react'
 
 export const ProfileBox = styled(Box, {
   marginTop: '$6',
@@ -11,6 +11,10 @@ export const ProfileBox = styled(Box, {
     display: 'flex',
     flexDirection: 'column',
     gap: '$4',
+  },
+
+  [`${Button}`]: {
+    height: '2.875rem',
   },
 })
 

@@ -21,7 +21,7 @@ export function ClaimUsernameForm() {
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitted }, // use 'isSubmitted' with next/navigation to disable button after click
+    formState: { errors, isSubmitting }, // use 'isSubmitting' with next/navigation to disable button after click
   } = useForm<ClaimUsernameFormData>({
     resolver: zodResolver(claimUsernameFormSchema),
   })
@@ -43,7 +43,7 @@ export function ClaimUsernameForm() {
           {...register('username')}
         />
 
-        <Button size="sm" type="submit" disabled={isSubmitted}>
+        <Button size="sm" type="submit" disabled={isSubmitting}>
           Reservar
           <ArrowRight />
         </Button>

@@ -17,6 +17,11 @@ export const ConnectItem = styled('div', {
   borderRadius: '$md',
 
   marginBottom: '$4',
+
+  '@media (max-width: 425px)': {
+    flexDirection: 'column',
+    gap: '$2',
+  },
 })
 
 export const AuthError = styled(Text, {

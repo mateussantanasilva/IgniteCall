@@ -58,6 +58,10 @@ export const CalendarBody = styled('table', {
     color: '$gray200',
     fontWeight: '$medium',
     fontSize: '$sm',
+
+    '@media (max-width: 375px)': {
+      fontSize: '$xxs',
+    },
   },
 
   'tbody:before': {

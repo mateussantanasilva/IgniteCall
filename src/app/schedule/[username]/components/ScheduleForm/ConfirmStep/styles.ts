@@ -35,6 +35,11 @@ export const FormHeader = styled('div', {
       height: '$5',
     },
   },
+
+  '@media (max-width: 425px)': {
+    flexDirection: 'column',
+    alignItems: 'start',
+  },
 })
 
 export const FormError = styled(Text, {
@@ -46,4 +51,8 @@ export const FormActions = styled(Text, {
   display: 'flex',
   justifyContent: 'flex-end',
   gap: '$2',
+
+  '@media (max-width: 425px)': {
+    flexDirection: 'column-reverse',
+  },
 })

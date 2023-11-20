@@ -80,7 +80,5 @@ export async function GET(
     return !isTimeBlocked && !isTimeInPast
   })
 
-  console.log({ possibleTimesAvaiable, availableTimes })
-
   return NextResponse.json({ possibleTimesAvaiable, availableTimes })
 }
